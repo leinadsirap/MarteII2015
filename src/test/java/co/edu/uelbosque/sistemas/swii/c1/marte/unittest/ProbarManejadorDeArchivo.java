@@ -32,11 +32,12 @@ public class ProbarManejadorDeArchivo {
     
     @Test
     public void laPrimerLineaDelArchivoEsCorrecta() throws FileNotFoundException, IOException{
-        Tablero texperado=new Tablero(7,6);
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
-        Tablero t=manejador.getPrimeraLinea();
-        Assert.assertTrue(texperado.equals(t));
+        String primeraL = manejador.getPrimeraLinea();
+        String primeraLEsp = "7 6";
+        Assert.assertEquals(primeraL, primeraLEsp);
+
     }
     
 }
