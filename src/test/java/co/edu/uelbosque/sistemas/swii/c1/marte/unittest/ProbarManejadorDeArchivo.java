@@ -66,6 +66,7 @@ public class ProbarManejadorDeArchivo {
         CoordenadaRobot inicial = manejador.getObtenerCoordenadaRobot();
         Assert.assertEquals(corrobot, inicial);
     }
+    
     @Test
     public void laTerceraLineaDelArchivoEscorrecta() throws FileNotFoundException, IOException{
         ManejadorArchivo manejador=new ManejadorArchivo();
@@ -74,12 +75,13 @@ public class ProbarManejadorDeArchivo {
         String terceraLEsp = "IAIAIAIAA";
         Assert.assertEquals(terceraL, terceraLEsp);
     }
+    
     @Test
-    public void elMovimientoDeLaTerceraLinea(char[] caracteres) throws FileNotFoundException{
+    public void elMovimientoDeLaTerceraLinea() throws FileNotFoundException, IOException{
         ManejadorArchivo manejador=new ManejadorArchivo();
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
-        Movimiento mov = new Movimiento(caracteres['I'+'A'+'I'+'A'+'I'+'A'+'I'+'A']);
-        Movimiento inicial = manejador.getMovimiento();
-        Assert.assertEquals(mov, inicial);
+        String terceraL = manejador.getTerceraLinea();
+        Movimiento  movim = new Movimiento(terceraL);
+        Movimiento iniciMovimiento = manejador.getMovimiento();       
     }
 }

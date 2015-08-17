@@ -10,24 +10,17 @@ package co.edu.uelbosque.sistemas.swii.c1.marte;
  */
 public class Movimiento {
    
-  public char [] caracteres;
+  public String terceraL;
 
-   
-
-   public Movimiento(char[] caracteres) {
-        this.caracteres =caracteres;
+  public Movimiento(String terceraL) {
+        this.terceraL = terceraL;
     }
 
-    public Movimiento(char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-    @Override
+   @Override
        public boolean equals (Object obj){
         if(obj == null) return false;
         if(!(obj instanceof Movimiento)) return false;
         Movimiento tem = (Movimiento)obj;
-        return (this.caracteres==tem.caracteres );
+        return (this.terceraL==tem.terceraL );
     }
 }

@@ -88,13 +88,15 @@ public class ManejadorArchivo {
         return null;
        
     }
-public Movimiento getMovimiento(){
-    char[] caracteres = lineaTres.toCharArray();
-    
-        return new Movimiento(caracteres);
-    
-}
-    
-    
-  
+
+    public Movimiento getMovimiento() throws IOException {
+        String linea = getTerceraLinea();
+        for(int i=0; i<linea.length();i++){
+            char mo = linea.charAt(i);
+        }
+        return null;
+        
+    }
+
+      
 }
