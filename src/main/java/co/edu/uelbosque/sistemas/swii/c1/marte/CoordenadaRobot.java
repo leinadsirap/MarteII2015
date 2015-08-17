@@ -13,7 +13,7 @@ public class CoordenadaRobot {
     int y;
     String sentido;
     
-     public CoordenadaRobot(int x, int y, String sentido) {
+     public CoordenadaRobot(int y, int x, String sentido) {
        this.x = x;
        this.y = y;
        this.sentido = sentido;

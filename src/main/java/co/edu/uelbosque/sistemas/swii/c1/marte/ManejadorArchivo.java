@@ -25,6 +25,9 @@ public class ManejadorArchivo {
     String lineaTres;
     char [] caracteres= null;
     int contador;
+    int cordenadaRx;
+    int cordendaRy;
+    String sentidoR;
     CoordenadaRobot  rob;
     
     public void setRutaArchivo(String ruta) throws FileNotFoundException {
@@ -93,39 +96,43 @@ public class ManejadorArchivo {
     public CoordenadaRobot getMovimiento() throws IOException {
         String linea = getTerceraLinea(); 
         char[] caracteres = linea.toCharArray();
+        
+        cordendaRy= rob.y;
+        cordenadaRx = rob.x;
+        sentidoR = rob.sentido;
         for (int x=0;x<caracteres.length;x++){
              if(caracteres[x] == 'A'){
                 
-               switch(rob.sentido) {
+               switch(sentidoR) {
  case "N": 
-     rob.y = rob.y +1;
+     cordendaRy = cordendaRy +1;
      break;
  case "W": 
-     rob.x = rob.x - 1;
+     cordenadaRx = cordenadaRx - 1;
      break;
  case "S": 
-    rob.y = rob.y - 1;
+    cordendaRy = cordendaRy - 1;
      break;
  case "E": 
-     rob.x= rob.x + 1;
+     cordenadaRx = cordenadaRx + 1;
      break;
  default: 
     
      break;
  }   
             }else if (caracteres[x] == 'I'){
-                  switch(rob.sentido) {
+                  switch(sentidoR) {
  case "N": 
-     rob.sentido = "W";
+     sentidoR = "W";
      break;
  case "W": 
-     rob.sentido = "S";
+     sentidoR = "S";
      break;
  case "S": 
-     rob.sentido = "E";
+     sentidoR = "E";
      break;
  case "E": 
-     rob.sentido = "N";
+     sentidoR = "N";
      break;
  default: 
    
@@ -134,18 +141,18 @@ public class ManejadorArchivo {
              
         }else{
             
-               switch(rob.sentido) {
+               switch(sentidoR) {
  case "N": 
-     rob.sentido = "E";
+     sentidoR = "E";
      break;
  case "W": 
-    rob.sentido = "N";
+    sentidoR = "N";
      break;
  case "S": 
-     rob.sentido = "W";
+     sentidoR = "W";
      break;
  case "E": 
-     rob.sentido = "S";
+     sentidoR = "S";
      break;
  default: 
     
@@ -153,6 +160,6 @@ public class ManejadorArchivo {
  }
             }            
         }
-             return new CoordenadaRobot(rob.y , rob.x, rob.sentido);
+             return new CoordenadaRobot(cordendaRy , cordenadaRx, sentidoR);
       }
 }
