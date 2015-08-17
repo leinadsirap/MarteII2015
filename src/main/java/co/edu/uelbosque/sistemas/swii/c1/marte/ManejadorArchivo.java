@@ -151,9 +151,8 @@ public class ManejadorArchivo {
     
      break;
  }
-            }
+            }            
         }
-            
-        return new CoordenadaRobot(rob.y , rob.x, rob.sentido);
+             return new CoordenadaRobot(rob.y , rob.x, rob.sentido);
       }
 }

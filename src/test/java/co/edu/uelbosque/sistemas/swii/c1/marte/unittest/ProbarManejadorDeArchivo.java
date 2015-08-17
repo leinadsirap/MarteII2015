@@ -82,7 +82,10 @@ public class ProbarManejadorDeArchivo {
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
         String terceraL = manejador.getTerceraLinea();
         Movimiento  movim = new Movimiento(terceraL);
-        CoordenadaRobot iniciMovimiento = manejador.getMovimiento();       
+       
+        CoordenadaRobot iniciMovimiento = manejador.getMovimiento();  
+         CoordenadaRobot resultado =  new CoordenadaRobot(2,2,"N");
+        Assert.assertEquals(iniciMovimiento, resultado);
     }
     
 }
