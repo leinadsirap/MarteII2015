@@ -25,6 +25,7 @@ public class ManejadorArchivo {
     String lineaTres;
     char [] caracteres= null;
     int contador;
+    CoordenadaRobot  rob;
     
     public void setRutaArchivo(String ruta) throws FileNotFoundException {
         reglas=new File(ruta);
@@ -89,14 +90,70 @@ public class ManejadorArchivo {
        
     }
 
-    public Movimiento getMovimiento() throws IOException {
-        String linea = getTerceraLinea();
-        for(int i=0; i<linea.length();i++){
-            char mo = linea.charAt(i);
+    public CoordenadaRobot getMovimiento() throws IOException {
+        String linea = getTerceraLinea(); 
+        char[] caracteres = linea.toCharArray();
+        for (int x=0;x<caracteres.length;x++){
+             if(caracteres[x] == 'A'){
+                
+               switch(rob.sentido) {
+ case "N": 
+     rob.y = rob.y +1;
+     break;
+ case "W": 
+     rob.x = rob.x - 1;
+     break;
+ case "S": 
+    rob.y = rob.y - 1;
+     break;
+ case "E": 
+     rob.x= rob.x + 1;
+     break;
+ default: 
+    
+     break;
+ }   
+            }else if (caracteres[x] == 'I'){
+                  switch(rob.sentido) {
+ case "N": 
+     rob.sentido = "W";
+     break;
+ case "W": 
+     rob.sentido = "S";
+     break;
+ case "S": 
+     rob.sentido = "E";
+     break;
+ case "E": 
+     rob.sentido = "N";
+     break;
+ default: 
+   
+     break;
+ }
+             
+        }else{
+            
+               switch(rob.sentido) {
+ case "N": 
+     rob.sentido = "E";
+     break;
+ case "W": 
+    rob.sentido = "N";
+     break;
+ case "S": 
+     rob.sentido = "W";
+     break;
+ case "E": 
+     rob.sentido = "S";
+     break;
+ default: 
+    
+     break;
+ }
+            }
         }
-        return null;
-        
-    }
-
-      
+            
+        return new CoordenadaRobot(rob.y , rob.x, rob.sentido);
+      }
 }

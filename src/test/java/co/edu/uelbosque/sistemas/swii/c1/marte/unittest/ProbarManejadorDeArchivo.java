@@ -82,6 +82,7 @@ public class ProbarManejadorDeArchivo {
         manejador.setRutaArchivo("src/main/resources/reglas.txt");
         String terceraL = manejador.getTerceraLinea();
         Movimiento  movim = new Movimiento(terceraL);
-        Movimiento iniciMovimiento = manejador.getMovimiento();       
+        CoordenadaRobot iniciMovimiento = manejador.getMovimiento();       
     }
+    
 }
