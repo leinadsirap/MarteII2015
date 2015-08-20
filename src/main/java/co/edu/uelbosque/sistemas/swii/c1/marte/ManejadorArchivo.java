@@ -96,6 +96,7 @@ public class ManejadorArchivo {
     public CoordenadaRobot getMovimiento() throws IOException {
         String linea = getTerceraLinea(); 
         char[] caracteres = linea.toCharArray();
+        rob = getObtenerCoordenadaRobot();
         
         cordendaRy= rob.y;
         cordenadaRx = rob.x;
