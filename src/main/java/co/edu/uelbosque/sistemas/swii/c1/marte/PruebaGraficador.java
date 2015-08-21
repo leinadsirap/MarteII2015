@@ -13,6 +13,12 @@ public class PruebaGraficador {
     /**
      * @param args the command line arguments
      */
+    
+    //
+    //
+    //PROFESOR COMO HAGO ESTA PRUEBA PARA MOSTRAR EL TABLERO POR PANTALLA :D ??????
+    //
+    
     public static void main(String[] args) {
         int cox = 2;
         int coy = 1;
